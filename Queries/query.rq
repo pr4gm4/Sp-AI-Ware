@@ -1,0 +1,10 @@
+prefix mont:<../Ontologies/mal_ont>
+select *
+from <../Ontologies/mal_ont.ttl>
+where
+{
+
+    ?mal mont:attack_type ?atk.
+    ?mal mont:category "love".
+    
+}

@@ -1,0 +1,24 @@
+@prefix mont:<../Ontologies/mal_ont> .
+
+mont:malware
+    mont:feature mont:attack_type;
+    mont:feature mont:year_of_discovery;
+    mont:feature mont:year_of_creation;
+    mont:feature mont:name;
+    mont:feature mont:category;
+    mont:feature mont:description;
+    mont:feature mont:operating_system;
+    mont:feature mont:num_infected_machines;
+    mont:feature mont:patch;
+    mont:feature mont:programming_language;
+    mont:feature mont:economic_damage;
+    mont:feature mont:infection_vectors;
+    mont:feature mont:hash_identifier. 
+
+mont:mal1
+    mont:attack_type mont:email_phishing;
+    mont:attack_typo mont:email_stolen;
+    mont:category "love".
+
+mont:mal2
+    mont:attack_type mont:pc_destroied.
