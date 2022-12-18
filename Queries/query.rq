@@ -1,10 +1,11 @@
 prefix mont:<../Ontologies/mal_ont>
-select *
+select ?type ?desc
 from <../Ontologies/mal_ont.ttl>
 where
 {
-
-    ?mal mont:attack_type ?atk.
-    ?mal mont:category "love".
+    
+    ?id mont:name "ILOVEYOU".
+    ?id mont:subtype ?type.
+    ?type mont:description ?desc.
     
 }
