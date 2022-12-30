@@ -1,3 +1,4 @@
+import pandas as pd 
 def printLogo():
     logo = """
    _____                    _____   __          __            
@@ -12,22 +13,25 @@ def printLogo():
     print(logo)
     
 def printIntro():
-    intro = """
+    intro = """\n
 Benvenuto/a in Sp-AI-Ware, un laboratorio per rilevazione e analisi di Malware potenziato da algoritmi di Machine Learning
-e dotato di Base di Conoscenza basata su Web Semantico! 
+e dotato di Base di Conoscenza basata su Web Semantico!\n 
 """
     print(intro)
 
 def prompt():
-    prompt = """
+    prompt = """\n
 Scegli una delle seguenti azioni da fare:
 [1]Inserire Metadati di file eseguibile per una classificazione con algoritmo ML
 [2]Passare all'interrogazione della Base di Conoscenza per avere piu' info sui Malware gia' rilevati
+[3]Caricare un nuovo insieme di file esegubili da poter analizzare
+[4]Esci da Sp-AI-Ware\n
 """
     print(prompt)
 
-def menu():
+def main_menu():
     choose = 0
+    query_set = None
     while True:
         prompt()
         choose = input()
@@ -36,10 +40,48 @@ def menu():
         elif choose == '2':
             print("TODO Query KB")
         elif choose =='3':
+            query_set = LoadingQuerySet()
+        elif choose =='4':
             break
-    print("Arrivederci !")
-    
+    print("\nArrivederci !\n")
+
+
+def LoadingQuerySet():
+    filename = input("\nInserisci il nome del file per i  metadati di eseguibili da analizzare(in formato csv)\n")
+    try:
+        query_set = pd.read_csv("../Dataset/"+filename+".csv")
+    except FileNotFoundError:
+        print("\nErrore: il percorso inserito non e' un percorso valido\n")
+    except Exception:
+        print("\nErrore: ",Exception,"\n")    
+    else:
+        print("\nCaricamento effettuato con successo\n")
+        return query_set
+
+
+def chooseQuerySet(query_set):
+    print("\nScegliere uno dei file eseguibili da analizzare, ("+str(query_set.shape([0]))+" file)"+"\n")      
+
+#MAIN
 printLogo()
 printIntro()
-menu()    
+main_menu()    
+# takeQueryset()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
