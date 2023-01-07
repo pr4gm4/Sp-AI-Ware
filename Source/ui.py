@@ -31,25 +31,25 @@ Scegli una delle seguenti azioni da fare:
 
 def main_menu():
     choose = 0
-    query_set = None
+    query_set = pd.read_csv("../Datasets/query_set_5k.csv")#TODO leave this a
     while True:
         prompt()
         choose = input()
         if choose == '1':
-            print("TODO insert record")
+            scanMetaData(query_set)
         elif choose == '2':
             print("TODO Query KB")
         elif choose =='3':
-            query_set = LoadingQuerySet()
+            query_set = loadingQuerySet()
         elif choose =='4':
             break
     print("\nArrivederci !\n")
 
 
-def LoadingQuerySet():
+def loadingQuerySet():
     filename = input("\nInserisci il nome del file per i  metadati di eseguibili da analizzare(in formato csv)\n")
     try:
-        query_set = pd.read_csv("../Dataset/"+filename+".csv")
+        query_set = pd.read_csv("../Datasets/"+filename+".csv")
     except FileNotFoundError:
         print("\nErrore: il percorso inserito non e' un percorso valido\n")
     except Exception:
@@ -58,9 +58,23 @@ def LoadingQuerySet():
         print("\nCaricamento effettuato con successo\n")
         return query_set
 
+def scanMetaData(query_set):
+    
+    try:
+        print("\nSelezionare i metadati da analizzare tra i seguenti file\n")
+        for i in query_set:
+            print(type(query_set))
+            
+    except Exception as e:
+        print("\nErrore: il query set non e' stato caricato correttamente\n")
+        print(e)
+        return
+    
+    
+     
 
-def chooseQuerySet(query_set):
-    print("\nScegliere uno dei file eseguibili da analizzare, ("+str(query_set.shape([0]))+" file)"+"\n")      
+# def chooseQuerySet(query_set):
+#     print("\nScegliere uno dei file eseguibili da analizzare, ("+str(query_set.shape([0]))+" file)"+"\n")      
 
 #MAIN
 printLogo()
