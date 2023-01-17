@@ -1,4 +1,6 @@
 import pandas as pd 
+import numpy as np
+import pickle as pick
 def printLogo():
     logo = """
    _____                    _____   __          __            
@@ -22,54 +24,90 @@ e dotato di Base di Conoscenza basata su Web Semantico!\n
 def prompt():
     prompt = """\n
 Scegli una delle seguenti azioni da fare:
-[1]Inserire Metadati di file eseguibile per una classificazione con algoritmo ML
-[2]Passare all'interrogazione della Base di Conoscenza per avere piu' info sui Malware gia' rilevati
-[3]Caricare un nuovo insieme di file esegubili da poter analizzare
-[4]Esci da Sp-AI-Ware\n
+[1]Scannerizzare un file sospetto (AI-Powered)
+[2]Consultare l'intelligence online riguardo Malware gia' rilevati
+[3]Esci da Sp-AI-Ware\n
 """
     print(prompt)
 
-def main_menu():
+def main_menu(query_set,model):
     choose = 0
-    query_set = pd.read_csv("../Datasets/query_set_5k.csv")#TODO leave this a
     while True:
         prompt()
         choose = input()
         if choose == '1':
-            scanMetaData(query_set)
+            scanMetaData(query_set,model)
         elif choose == '2':
             print("TODO Query KB")
+        # elif choose =='3':
+        #     query_set = loadingQuerySet()
         elif choose =='3':
-            query_set = loadingQuerySet()
-        elif choose =='4':
             break
     print("\nArrivederci !\n")
 
 
-def loadingQuerySet():
-    filename = input("\nInserisci il nome del file per i  metadati di eseguibili da analizzare(in formato csv)\n")
-    try:
-        query_set = pd.read_csv("../Datasets/"+filename+".csv")
-    except FileNotFoundError:
-        print("\nErrore: il percorso inserito non e' un percorso valido\n")
-    except Exception:
-        print("\nErrore: ",Exception,"\n")    
-    else:
-        print("\nCaricamento effettuato con successo\n")
-        return query_set
+# def loadingQuerySet():
+#     filename = input("\nInserisci il nome del file per i  metadati di eseguibili da analizzare(in formato csv)\n")
+#     try:
+#         query_set = pd.read_csv("../Datasets/"+filename+".csv")
+#     except FileNotFoundError:
+#         print("\nErrore: il percorso inserito non e' un percorso valido\n")
+#     except Exception:
+#         print("\nErrore: ",Exception,"\n")    
+#     else:
+#         print("\nCaricamento effettuato con successo\n")
+#         return query_set
 
-def scanMetaData(query_set):
+def scanMetaData(query_set,model):
     
-    try:
-        print("\nSelezionare i metadati da analizzare tra i seguenti file\n")
-        for i in query_set:
-            print(type(query_set))
+    # try:
+    #     print("\nSelezionare i metadati da analizzare tra i seguenti file\n")
+    #     for i in query_set:
+    #         print(type(query_set))
             
-    except Exception as e:
-        print("\nErrore: il query set non e' stato caricato correttamente\n")
-        print(e)
-        return
-    
+    # except Exception as e:
+    #     print("\nErrore: il query set non e' stato caricato correttamente\n")
+    #     print(e)
+    #     return
+    count = 0
+    for i in query_set.loc[:,"sha"]:
+        print("programma->"+str(count)+" "+i)
+        count+=1
+        
+    choice = input("\nscegliere uno dei seguenti programmi da analizzare (il codice sha identifica univocamente il programma)\n")
+
+    program =query_set.loc[int(choice),:]
+
+    del program["sha"]
+
+    y_pred = model.predict(np.array([program,]))
+
+    if y_pred == 1 :
+        print("\nATTENZIONE: il programma selezionato ha avuto esito positivo ed e' un Malware\n")
+
+        while True:
+            print("\nVuoi fornire ulteriori dati da caricare sulla base di conoscenza online?\n")
+            print("\n[1] Si\n[2] No\n")
+            choice = int(input())  
+            
+            if choice == 1:
+                print("TODO DECISION TREE MANUAL")
+            elif choice == 2:
+                print("\nRitorno al menu' principale\n")
+                break
+            else :
+                print("\nScelta non valida\n")
+
+    else :
+        print("\nla scansione sul programma non ha rilevato codice malevolo, e' possibile continuare a utilizzare il programma senza rischi\n")
+
+
+def loadModel(file_path):
+    with open(file_path,"rb") as f:
+        model = pick.load(f)
+        
+    return model
+        
     
      
 
@@ -77,9 +115,11 @@ def scanMetaData(query_set):
 #     print("\nScegliere uno dei file eseguibili da analizzare, ("+str(query_set.shape([0]))+" file)"+"\n")      
 
 #MAIN
+model = loadModel("../Model/classifier.pkl")
+query_set = pd.read_csv("../Datasets/50dataset.csv")
 printLogo()
 printIntro()
-main_menu()    
+main_menu(query_set,model)    
 # takeQueryset()
 
 
