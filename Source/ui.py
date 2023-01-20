@@ -46,29 +46,9 @@ def main_menu(query_set,model):
     print("\nArrivederci !\n")
 
 
-# def loadingQuerySet():
-#     filename = input("\nInserisci il nome del file per i  metadati di eseguibili da analizzare(in formato csv)\n")
-#     try:
-#         query_set = pd.read_csv("../Datasets/"+filename+".csv")
-#     except FileNotFoundError:
-#         print("\nErrore: il percorso inserito non e' un percorso valido\n")
-#     except Exception:
-#         print("\nErrore: ",Exception,"\n")    
-#     else:
-#         print("\nCaricamento effettuato con successo\n")
-#         return query_set
 
 def scanMetaData(query_set,model):
     
-    # try:
-    #     print("\nSelezionare i metadati da analizzare tra i seguenti file\n")
-    #     for i in query_set:
-    #         print(type(query_set))
-            
-    # except Exception as e:
-    #     print("\nErrore: il query set non e' stato caricato correttamente\n")
-    #     print(e)
-    #     return
     count = 0
     for i in query_set.loc[:,"sha"]:
         print("programma->"+str(count)+" "+i)

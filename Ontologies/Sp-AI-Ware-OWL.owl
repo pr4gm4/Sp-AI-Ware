@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/Sp-AI-Ware#"
+     xml:base="http://localhost/Sp-AI-Ware"
+     xmlns:dbp="https://dbpedia.org/page/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:spai="http://localhost/Sp-AI-Ware#">
+    <owl:Ontology rdf:about="http://localhost/Sp-AI-Ware"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#attack_type -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#attack_type">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#attacks -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#attacks">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Target"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#combined_with -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#combined_with">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Rootkit"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#exploits -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#exploits">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Vulnerability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#has_property -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#has_property">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#host_program -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#host_program">
+        <rdfs:domain rdf:resource="https://dbpedia.org/page/Computer_virus"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Goodware"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#propagation -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#propagation">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Vectors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#what_reasons -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#what_reasons">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Reason"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#written_in -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Sp-AI-Ware#written_in">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Software"/>
+        <rdfs:range rdf:resource="http://localhost/Sp-AI-Ware#Programming_Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#author -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Sp-AI-Ware#author">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Software"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#year_of_creation -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Sp-AI-Ware#year_of_creation">
+        <rdfs:domain rdf:resource="http://localhost/Sp-AI-Ware#Software"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Adware -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Adware">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Android -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Android">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Smartphone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Apple -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Apple">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Computer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Attack -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Attack"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Auto_Replication -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Auto_Replication">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Backdoor -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Backdoor">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Company -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Company">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Computer -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Computer">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Individual_Machine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Email -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Email">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Online"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Executable -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Executable">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Offline"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#File_Stealing -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#File_Stealing">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Financial -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Financial">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Reason"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Floppy_Disk -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Floppy_Disk">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Mass_Storage_Devices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Goodware -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Goodware">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Software"/>
+        <owl:disjointWith rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Government -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Government">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Individual_Machine -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Individual_Machine">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Industrial -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Industrial">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Internet -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Internet">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Online"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Intranet -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Intranet">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Online"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Keylogger -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Keylogger">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Linux -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Linux">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Computer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#MSDOS -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#MSDOS">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Microsoft"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#MacOs -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#MacOs">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Apple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Macros_Exploit -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Macros_Exploit">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Malware -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Malware">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Software"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malicious Software</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malware</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Mass_Storage_Devices -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Mass_Storage_Devices">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Offline"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Master_Boot_Record_Injection -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Master_Boot_Record_Injection">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Microsoft -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Microsoft">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Computer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Network -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Network">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Offline -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Offline">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Vectors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Online -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Online">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Vectors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Political -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Political">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Reason"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Private -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Private">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Programming_Language -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Programming_Language"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Property -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Property"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Ransomware -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Ransomware">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Reason -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Reason"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Rogue -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Rogue">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Rootkit -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Rootkit">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Smartphone -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Smartphone">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Individual_Machine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Software -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Software"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Spyware -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Spyware">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Subject -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Subject">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Target"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#System -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#System">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Target"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Target -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Target"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Trojan_Horse -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Trojan_Horse">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Usb -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Usb">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Mass_Storage_Devices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Vectors -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Vectors"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Vulnerability -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Vulnerability"/>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Windows -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Windows">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Microsoft"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Wiper -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Wiper">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Sp-AI-Ware#Worm -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Worm">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+        <owl:disjointWith rdf:resource="https://dbpedia.org/page/Computer_virus"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Assembly_language -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Assembly_language">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Programming_Language"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Botnet -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Botnet">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Computer_virus -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Computer_virus">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Malware"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Data_erasure -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Data_erasure">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Denial-of-service_attack -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Denial-of-service_attack">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Email_spam -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Email_spam">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Encryption -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Encryption">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/File_sharing -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/File_sharing">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/JavaScript -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/JavaScript">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Programming_Language"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Privilege_escalation -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Privilege_escalation">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/page/Obfuscation_(software) -->
+
+    <owl:Class rdf:about="https://dbpedia.org/page/Obfuscation_(software)">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Property"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
