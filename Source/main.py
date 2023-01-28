@@ -22,6 +22,7 @@ def main_menu(query_set,model):
 
 
 #MAIN
+
 model = api.loadModel("../Model/classifier.pkl")
 query_set = pd.read_csv("../Datasets/50dataset.csv")
 gr.printLogo()

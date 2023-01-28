@@ -5,6 +5,7 @@ def getChoice():
 
 def outType(type):
     print("\nDalle informazioni fornite e' probabile che il programma sospetto sia un Malware di tipo "+type+"\n")
+    print("\nCaricamento dell'informazione sulla base di conoscenza\n")
 
 def invalidChoice():
     print("\nAttenzione: la scelta inserita non e' valida\n")
