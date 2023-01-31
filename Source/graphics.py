@@ -22,7 +22,7 @@ def prompt():
     prompt = """\n
 Scegli una delle seguenti azioni da fare:
 [1]Scannerizzare un file sospetto (AI-Powered)
-[2]Consultare l'intelligence online riguardo Malware gia' rilevati
+[2]Consultare un golossario online con informazioni da DBpedia sul mondo della Cybersecurity
 [3]Esci da Sp-AI-Ware\n
 """
     print(prompt)

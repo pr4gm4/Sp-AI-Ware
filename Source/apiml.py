@@ -53,12 +53,8 @@ def scanMetaData(query_set,model):
 
     else:
         y_pred = model.predict(np.array([program,]))
-        printResults(model,program)
         if y_pred == 1 :
             print("\nATTENZIONE: il programma selezionato ha avuto esito positivo ed e' probabilmente un Malware\n")
-            printResults(model,program)
-            print("\nRisultato finale del modello a Stack\n")
-            print(y_pred)
             choice = gr.numericInput(1,2,"\nVuoi fornire ulteriori dati da caricare sulla base di conoscenza online?\n\n[1] Si\n[2] No\n")  
             gr.printSeparator()
             

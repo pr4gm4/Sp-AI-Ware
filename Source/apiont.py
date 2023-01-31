@@ -107,7 +107,7 @@ def showInstanceInfo(ontpath,mal_ind):
     print(mal_ind.label)
     print()
     print("tipo")
-    print(mal_ind.__class__.label)
+    print(str(mal_ind.__class__))
     loadOntology(ontpath)
     properties = list(mal_ind.get_properties())
     for i in properties:
