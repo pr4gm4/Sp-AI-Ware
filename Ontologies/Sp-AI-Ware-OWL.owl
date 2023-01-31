@@ -569,16 +569,22 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutoReplicazionee9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
 </Self-replicating_machine>
 
+<Hospital rdf:about="#Ospedale6749">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ospedalee9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
+</Hospital>
+
 <Grayware rdf:about="#1c222d7646d5bc46f6f9d573afd44a2d918e32398a7035aabc3896bce72f5526">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <sha rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1c222d7646d5bc46f6f9d573afd44a2d918e32398a7035aabc3896bce72f5526</sha>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1c222d7646d5bc46f6f9d573afd44a2d918e32398a7035aabc3896bce72f5526</rdfs:label>
 </Grayware>
 
-<Hospital rdf:about="#Ospedale6749">
+<Grayware rdf:about="#740285983c4472b74198c638e3b51f97f3b3220dd18f6f459ef4a31d04ed63ea">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ospedalee9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
-</Hospital>
+  <sha rdf:datatype="http://www.w3.org/2001/XMLSchema#string">740285983c4472b74198c638e3b51f97f3b3220dd18f6f459ef4a31d04ed63ea</sha>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">740285983c4472b74198c638e3b51f97f3b3220dd18f6f459ef4a31d04ed63ea</rdfs:label>
+</Grayware>
 
 
 </rdf:RDF>
