@@ -39,7 +39,7 @@
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#host_program">
-  <rdfs:domain rdf:resource="#Computer_virus"/>
+  <rdfs:domain rdf:resource="#Computer_Virus"/>
   <rdfs:range rdf:resource="#Goodware"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Programma ospite</rdfs:label>
 </owl:ObjectProperty>
@@ -48,12 +48,6 @@
   <rdfs:domain rdf:resource="#Malware"/>
   <rdfs:range rdf:resource="#Vectors"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tipo di propagazione</rdfs:label>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#what_reasons">
-  <rdfs:domain rdf:resource="#Malware"/>
-  <rdfs:range rdf:resource="#Reason"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Motivo d'attacco</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#written_in">
@@ -81,6 +75,7 @@
 
 <owl:DatatypeProperty rdf:about="#sha">
   <rdfs:subPropertyOf rdf:resource="#hash"/>
+  <rdfs:domain rdf:resource="#Software"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
@@ -118,6 +113,7 @@
 <owl:Class rdf:about="#Rootkit">
   <rdfs:subClassOf rdf:resource="#Malware"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Rootkit</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rootkit</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Vulnerability_(computing)">
@@ -130,7 +126,7 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proprieta'</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Computer_virus">
+<owl:Class rdf:about="#Computer_Virus">
   <rdfs:subClassOf rdf:resource="#Malware"/>
   <owl:disjointWith rdf:resource="#Computer_worm"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Computer_virus</rdfs:isDefinedBy>
@@ -147,11 +143,6 @@
 <owl:Class rdf:about="#Vectors">
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Vectors</rdfs:isDefinedBy>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vettore d'attacco</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Reason">
-  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Reason</rdfs:isDefinedBy>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Motivo</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Software">
@@ -173,6 +164,7 @@
 <owl:Class rdf:about="#Adware">
   <rdfs:subClassOf rdf:resource="#Malware"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Adware</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adware</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Android">
@@ -197,6 +189,12 @@
   <rdfs:subClassOf rdf:resource="#Target"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/System</rdfs:isDefinedBy>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sistema</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Antimalware">
+  <rdfs:subClassOf rdf:resource="#Goodware"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Antivirus_software</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antimalware</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Apple_Inc">
@@ -246,6 +244,12 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Botnet</rdfs:label>
 </owl:Class>
 
+<owl:Class rdf:about="#Browser">
+  <rdfs:subClassOf rdf:resource="#Goodware"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Web_browser</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Browser Web</rdfs:label>
+</owl:Class>
+
 <owl:Class rdf:about="#Buffer_Overflow">
   <rdfs:subClassOf rdf:resource="#Vulnerability_(computing)"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Buffer Overfow</rdfs:label>
@@ -254,6 +258,12 @@
 <owl:Class rdf:about="#C">
   <rdfs:subClassOf rdf:resource="#Programming_Language"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linguaggio C</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Cleaner">
+  <rdfs:subClassOf rdf:resource="#Goodware"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Utility_software</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulizia PC</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Company">
@@ -266,6 +276,11 @@
   <rdfs:subClassOf rdf:resource="#System"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Computer_network</rdfs:isDefinedBy>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Cpp">
+  <rdfs:subClassOf rdf:resource="#Programming_Language"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C++</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Data_erasure">
@@ -290,6 +305,12 @@
   <rdfs:subClassOf rdf:resource="#Vectors"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Online</rdfs:isDefinedBy>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Online</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Email_Manager">
+  <rdfs:subClassOf rdf:resource="#Goodware"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Personal_information_manager</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gestore Email</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Email_spam">
@@ -328,10 +349,15 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Condivisione File illecita</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#Financial">
-  <rdfs:subClassOf rdf:resource="#Reason"/>
-  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Financial</rdfs:isDefinedBy>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lucro</rdfs:label>
+<owl:Class rdf:about="#Generic_Grayware">
+  <rdfs:subClassOf rdf:resource="#Grayware"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grayware Generico</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Grayware">
+  <rdfs:subClassOf rdf:resource="#Software"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Greyware</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grayware</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Government">
@@ -343,16 +369,6 @@
 <owl:Class rdf:about="#Public">
   <rdfs:subClassOf rdf:resource="#Subject"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pubblico</rdfs:label>
-</owl:Class>
-
-<owl:Class rdf:about="#Grayware">
-  <rdfs:subClassOf rdf:resource="#Software"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Hacktivism">
-  <rdfs:subClassOf rdf:resource="#Reason"/>
-  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Hacktivism</rdfs:isDefinedBy>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hacktivismo</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Hard_Disk">
@@ -461,6 +477,7 @@
 <owl:Class rdf:about="#Ransomware">
   <rdfs:subClassOf rdf:resource="#Malware"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Ransomware</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ransomware</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Rogue_security_software">
@@ -484,6 +501,7 @@
 <owl:Class rdf:about="#Spyware">
   <rdfs:subClassOf rdf:resource="#Malware"/>
   <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Spyware</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spyware</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Trojan_horse">
@@ -504,72 +522,63 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wiper</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#C++">
-  <rdfs:subClassOf rdf:resource="#Programming_Language"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C++</rdfs:label>
+<owl:Class rdf:about="#Word_Processor">
+  <rdfs:subClassOf rdf:resource="#Goodware"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/page/Word_processor</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Word Processor</rdfs:label>
 </owl:Class>
-
-<Hospital rdf:about="#Furstenfeldbruck">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Hospital>
-
-<Email rdf:about="#Outlook">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Email>
-
-<Government rdf:about="#USA_Government">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Government>
 
 <Ransomware rdf:about="#Wannacry">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <attacks rdf:resource="#Windows_10"/>
-  <attacks rdf:resource="#Windows_7"/>
-  <attack_type rdf:resource="#test"/>
-  <attack_type rdf:resource="#['Phishing']598"/>
-  <attack_type rdf:resource="#Sp-AI-Ware-OWL.Data_erasure605"/>
-  <attack_type rdf:resource="#Data_erasure541"/>
-  <year_of_discovery rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</year_of_discovery>
+  <attacks rdf:resource="#hosp"/>
+  <propagation rdf:resource="#inter"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wannacry</rdfs:label>
 </Ransomware>
 
-<Microsoft_Windows rdf:about="#Windows_10">
+<Industrial rdf:about="#hosp">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Microsoft_Windows>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hosp</rdfs:label>
+</Industrial>
 
-<Microsoft_Windows rdf:about="#Windows_7">
+<Internet rdf:about="#inter">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Microsoft_Windows>
+</Internet>
 
-<Denial-of-service_attack rdf:about="#test">
+<Computer_Virus rdf:about="#e9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Denial-of-service_attack>
+  <exploits rdf:resource="#MacrosExploit871"/>
+  <attack_type rdf:resource="#Botnet6387"/>
+  <has_property rdf:resource="#AutoReplicazione143"/>
+  <attacks rdf:resource="#Ospedale6749"/>
+  <sha rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</sha>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
+</Computer_Virus>
 
-<Phishing rdf:about="#['Phishing']598">
+<Macros_Exploit rdf:about="#MacrosExploit871">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Phishing>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MacrosExploite9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
+</Macros_Exploit>
 
-<Data_erasure rdf:about="#Sp-AI-Ware-OWL.Data_erasure605">
+<Botnet rdf:about="#Botnet6387">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Data_erasure>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Botnete9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
+</Botnet>
 
-<Wiper rdf:about="#shfddksjfhdsjk">
+<Self-replicating_machine rdf:about="#AutoReplicazione143">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <sha rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shfddksjfhdsjk</sha>
-</Wiper>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutoReplicazionee9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
+</Self-replicating_machine>
 
-<Trojan_horse rdf:about="#troj1">
+<Grayware rdf:about="#1c222d7646d5bc46f6f9d573afd44a2d918e32398a7035aabc3896bce72f5526">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <attacks rdf:resource="#Furstenfeldbruck"/>
-  <attacks rdf:resource="#USA_Government"/>
-  <propagation rdf:resource="#Outlook"/>
-  <num_of_infections rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">450</num_of_infections>
-  <year_of_discovery rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</year_of_discovery>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emotet</rdfs:label>
-</Trojan_horse>
+  <sha rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1c222d7646d5bc46f6f9d573afd44a2d918e32398a7035aabc3896bce72f5526</sha>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1c222d7646d5bc46f6f9d573afd44a2d918e32398a7035aabc3896bce72f5526</rdfs:label>
+</Grayware>
 
-<Data_erasure rdf:about="#Data_erasure541">
+<Hospital rdf:about="#Ospedale6749">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</Data_erasure>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ospedalee9281809218e45ff867f1d2663c99314336819ed044956faee44783bd9185db5</rdfs:label>
+</Hospital>
 
 
 </rdf:RDF>

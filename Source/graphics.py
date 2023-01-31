@@ -26,3 +26,19 @@ Scegli una delle seguenti azioni da fare:
 [3]Esci da Sp-AI-Ware\n
 """
     print(prompt)
+
+def numericInput(lowbound,upbound,message=""):
+    while True:
+        try:    
+            choice = int(input(message))
+            if choice < lowbound or choice > upbound:
+                print("\nScelta non valida, inserire solo i numeri nel range indicato\n")
+            else:
+                return choice
+        except ValueError:
+            print("\nScelta non valida, inserire solo numeri\n")
+
+def printSeparator():
+    print()
+    print("="*100)
+    print()

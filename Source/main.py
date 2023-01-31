@@ -4,20 +4,17 @@ import apiml as api
 
 
 def main_menu(query_set,model):
-    choose = 0
     while True:
         gr.prompt()
-        choose = input()
-        if choose == '1':
+        choose = gr.numericInput(1,3)
+        gr.printSeparator()
+        if choose == 1:
             api.scanMetaData(query_set,model)
-        elif choose == '2':
+        elif choose == 2:
             print("TODO Query KB")
-        # elif choose =='3':
-        #     query_set = loadingQuerySet()
-        elif choose =='3':
-            break
-    print("\nArrivederci !\n")
-
+        elif choose == 3:
+                print("\nArrivederci\n")
+                break
 
 
 
