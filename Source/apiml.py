@@ -53,6 +53,7 @@ def scanMetaData(query_set,model):
 
     else:
         y_pred = model.predict(np.array([program,]))
+        printResults(model,program)
         if y_pred == 1 :
             print("\nATTENZIONE: il programma selezionato ha avuto esito positivo ed e' probabilmente un Malware\n")
             printResults(model,program)
