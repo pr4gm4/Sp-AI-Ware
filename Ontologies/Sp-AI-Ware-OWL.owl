@@ -872,6 +872,14 @@
     
 
 
+    <!-- http://localhost/Sp-AI-Ware#Utente -->
+
+    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Utente">
+        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Private"/>
+    </owl:Class>
+    
+
+
     <!-- http://localhost/Sp-AI-Ware#Vectors -->
 
     <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Vectors">
