@@ -3,11 +3,31 @@ import re
 import graphics as gr
 import random
 
+
 def loadOntology(ontpath):
+    """funzione che carica l'ontologia a partire dal filepath indiciato
+
+    Args:
+        ontpath (): filepath della posizione dell'ontolofia
+
+    Returns:
+        l'ontologia di Sp-AI-Ware
+    """
     ontology = get_ontology(ontpath).load()
     return ontology
 
 def uploadInstance(maltype,sha,ontpath):
+    """funzione che carica nell'ontologia l'istanza del malware rilevato , fornendo sha e tipo di malware e sincronizza il reasoner Hermitt
+
+    Args:
+        maltype (): Stringa che indica il tipo di malware rilevato
+        sha (): Stringa che identifica univocamnete l'istanza nell'ontologia
+        ontpath (): filepath dell'ontologia
+
+    Returns:
+        True se tutto va a buon fine, False altrimenti
+    """
+    
     ontology = loadOntology(ontpath)
     upmal = ontology.search_one(label = maltype)(sha)
     upmal.sha.append(sha)
@@ -22,6 +42,14 @@ def uploadInstance(maltype,sha,ontpath):
 
 
 def exploreClass(classes):
+    """funzione che esplora con algoritmo Depth First Search le classi e sottoclassi dell'ontologia
+
+    Args:
+        classes (): Lista di classi da esplorare ricorsivamente
+
+    Returns:
+        la classe scelta dall'utente tra tutte quelle illustrate
+    """
     j = 0
     for i in classes:
         print("["+str(j)+"]"+str(i.label))
@@ -38,7 +66,22 @@ def exploreClass(classes):
 
 
 
+
 def uploadInfo(malware_ind,ontpath):
+    """funzione per aggiungere nell'ontologia , ulteriori informazioni a riguardo di un istanza di malware, come ad esempio il tipo di attacco, 
+    propagazione ecc .
+
+    Args:
+        malware_ind (): istanza di cui si vuole aggiungere l'informazione
+        ontpath (): filepath dell'ontologia
+
+    Returns:
+        : True se tutto va a buon fine
+          False altrimenti       
+    """
+    
+    
+    
     ontology = loadOntology(ontpath)
     list_prop = list(ontology.object_properties())
 
@@ -82,7 +125,20 @@ def uploadInfo(malware_ind,ontpath):
         return False
         
     return True
+
+    
+    
+    
 def alreadyScanned(ontpath,sha):
+    """funzione per controllare se un eseguibile identificato dal suo sha e' gia' stato scansionato
+
+    Args:
+        ontpath (): filepath ontologia
+        sha (): identificatore dell'eseguibile all'interno dell'ontologia
+
+    Returns:
+        True se il software e' stato scansionato, False altrimenti
+    """
     ontology = loadOntology(ontpath)
     instance = ontology.search_one(sha=sha)
     if instance == None:
@@ -91,6 +147,12 @@ def alreadyScanned(ontpath,sha):
         return True
 
 def showInstanceInfo(ontpath,mal_ind):
+    """funzione per mostrare le informazioni e le relazioni di un'istanza dentro la base di conoscenza
+
+    Args:
+        ontpath (): filepath dell'ontologia
+        mal_ind (): istanza di cui estrapolare le informazioni
+    """
     print("nome")
     print(mal_ind.label)
     print()
@@ -106,6 +168,17 @@ def showInstanceInfo(ontpath,mal_ind):
                     print(value.label)
 
 def loadIndByLabel(ontpath,label):
+    """funzione per caricare un istanza a partire dalla sua label nell'ontologia
+
+    Args:
+        ontpath (): filepath dell'ontologia
+        label (): proprieta' rdfs:label posseduta dall'istanza
+
+    Returns:
+        ritorna l'istanza indicata dalla label se presente, False altrimenti
+    """
+    
+    
     ontology = loadOntology(ontpath)
     instance = ontology.search_one(label=label)
     if instance == None:

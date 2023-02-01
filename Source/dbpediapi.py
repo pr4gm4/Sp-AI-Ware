@@ -4,6 +4,13 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 def queryDbpedia(ontpath):
+    
+    """
+        intera funzione che si occupa di interrogare l'endpoin sparql di dbpedia
+        
+        Args:
+            filepath dell'ontologia
+    """
     ontology = ont.loadOntology(ontpath)
     classes = list(ontology.classes())
     classes = [x for x in classes if x.isDefinedBy]

@@ -6,6 +6,12 @@ import dbpediapi as dbp
 ontpath = "../Ontologies/Sp-AI-Ware-OWL.owl"
 
 def main_menu(query_set,model):
+    """funzione menu principale
+
+    Args:
+        query_set (): 50 programmi da scansionare 
+        model (): modello allenato per poter scansionare i programmi
+    """
     while True:
         gr.prompt()
         choose = gr.numericInput(1,3)

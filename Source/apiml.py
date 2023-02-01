@@ -9,15 +9,20 @@ ontpath = "../Ontologies/Sp-AI-Ware-OWL.owl"
 
 onto = ont.loadOntology(ontpath)
 
-def printResults(model,xinput):
-    print("\nRisultati per i diversi modelli:\n")
-    for estimator in model.estimators_:
-        print(estimator.__class__.__name__)
-        print(estimator.predict(np.array([xinput,])))
 
-    
+  
 
 def scanMetaData(query_set,model):
+    """questa funzione utilizza il modello per effettuare una scansione di un eseguibile preso tra i 50 randomicamente campionati. se l'eseguibile e' positivo viene chiesto all'utente di inserire altre informazioni da caricare sulal KB
+
+    Args:
+        query_set : e' il dataset di eseguibili campionati
+        model : classificatore gia' addestrato utilizzato per le scansioni
+
+    Returns:
+        Vero se tutto fa a buon fine, Falso altrimenti
+
+    """
     count = 0
     list_sha = query_set.loc[:,"sha"]
     for i in list_sha:
@@ -90,6 +95,14 @@ def scanMetaData(query_set,model):
 
 
 def loadModel(file_path):
+    """funzione che carica il modello a partire dal path indicato
+
+    Args:
+        file_path : path della locazione del modello allenato
+
+    Returns:
+        il modello caricato
+    """
     
     with open(file_path,"rb") as f:
         model = pick.load(f)

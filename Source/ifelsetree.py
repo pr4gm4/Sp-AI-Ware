@@ -1,6 +1,11 @@
 import graphics as gr
 
 def outType(type):
+    """funzione che stampa l'output della classificazione malware
+
+    Args:
+        type (): stringa che identifica il malware classificato
+    """
     print("\nDalle informazioni fornite e' probabile che il programma sospetto sia un Malware di tipo "+type+"\n")
     print("\nCaricamento dell'informazione sulla base di conoscenza\n")
 
@@ -8,9 +13,16 @@ def invalidChoice():
     print("\nAttenzione: la scelta inserita non e' valida\n")
 
 def outGray():
+    """stampa a schermo qualora il malware sia un Grayware
+    """
     print("\nDalle informazioni fornite e' difficile stabilire con una buona probabilita' se il programma sia dannoso oppure no. Tuttavia poiche' i suoi dati binari sono stati segnalati, si provvedera' a categorizzare questo software come Grayware ovvero un software la cui pericolosita' e' dubbia\n")
 
 def questionTree():
+    """albero di decisione per categorizzare l'istanza del malware rilevato tra i 50 programmi
+
+    Returns:
+        una stringa identificativa della tipologia di malware indicato
+    """
     yes_no="\n[1]Si\n[2]No\n"
     print("\nHai notato piu' copie del programma sospetto all'interno della tua macchina dopo il suo utilizzo ?\n")
     choice = gr.numericInput(1,2,yes_no)

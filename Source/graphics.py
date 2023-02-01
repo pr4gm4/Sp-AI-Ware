@@ -1,4 +1,11 @@
+
+
 def printLogo():
+    """
+        funzione per stampare il logo del software
+    """
+    
+    
     logo = """
    _____                    _____   __          __            
   / ____|             /\   |_   _|  \ \        / /            
@@ -27,7 +34,18 @@ Scegli una delle seguenti azioni da fare:
 """
     print(prompt)
 
+
 def numericInput(lowbound,upbound,message=""):
+    """funzione per far selezionare un input numerico da tastiera evitando di poter inserire altri caratteri
+
+    Args:
+        lowbound (): confine inferiore del range di scelte possibili
+        upbound (): confine superiore del range di scelte possibili
+        message (str, optional): messaggio opzionale da accompagnare all'input dell'utente. Defaults to "".
+
+    Returns:
+        ritorna la scelta numerica fatta da tastiera
+    """
     while True:
         try:    
             choice = int(input(message))
