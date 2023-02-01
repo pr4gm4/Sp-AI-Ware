@@ -13,7 +13,7 @@ def main_menu(query_set,model):
         if choose == 1:
             api.scanMetaData(query_set,model)
         elif choose == 2:
-            dbp.queryDbpedia(gl.ONTPATH)
+            dbp.queryDbpedia(gl.ONTPATH)          
         elif choose == 3:
                 print("\nArrivederci\n")
                 break
