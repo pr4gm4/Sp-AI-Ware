@@ -3,7 +3,7 @@ progetto di ingegneria della conoscenza 2022/2023
 
 ## Requisiti
 
-Python 3.0
+Python 3.10
 
 ### Package
 
