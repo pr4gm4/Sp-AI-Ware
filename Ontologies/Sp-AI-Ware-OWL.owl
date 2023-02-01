@@ -656,14 +656,6 @@
     
 
 
-    <!-- http://localhost/Sp-AI-Ware#Non_definito -->
-
-    <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Non_definito">
-        <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Programming_Language"/>
-    </owl:Class>
-    
-
-
     <!-- http://localhost/Sp-AI-Ware#Offline -->
 
     <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Offline">
