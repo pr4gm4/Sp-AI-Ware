@@ -35,18 +35,6 @@ def exploreClass(classes):
         return exploreClass(sublist)
 
 
-# def exploreClass(classes):
-#     if len(classes.subclasses()) == 0:
-#         return classes
-#     else:
-#         j = 0
-#         for i in classes:
-#             print("["+str(j)+"]"+str(i.label))
-#             j+=1
-
-#         choice = gr.numericInput(0,len(classes)-1)
-#         sublist = list(classes[choice].subclasses())
-#         return exploreClass(sublist)
 
 
 

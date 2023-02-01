@@ -2,10 +2,12 @@ import pickle as pick
 import numpy as np
 import ifelsetree as ifel
 import apiont as ont
-import glob as gl
 import graphics as gr
 
-onto = ont.loadOntology(gl.ONTPATH)
+
+ontpath = "../Ontologies/Sp-AI-Ware-OWL.owl"
+
+onto = ont.loadOntology(ontpath)
 
 def printResults(model,xinput):
     print("\nRisultati per i diversi modelli:\n")
@@ -31,21 +33,21 @@ def scanMetaData(query_set,model):
     shaprog = str(shaprog)
     del program["sha"]
 
-    if ont.alreadyScanned(gl.ONTPATH,shaprog) == True:
+    if ont.alreadyScanned(ontpath,shaprog) == True:
         print("\nl'hash del programma indicato e' stato riconosciuto all'interno della base di conoscenza online! Questo vuol dire che il software indicato e' stato in precedenza riconosciuto come malevolo, si consiglia la sua rimozione\n")
         print("\nEcco le informazioni sul Malware all'interno della base di conoscenza\n")
 
-        instance = ont.loadIndByLabel(gl.ONTPATH,shaprog)
+        instance = ont.loadIndByLabel(ontpath,shaprog)
         if instance == None:
             print("Errore: impossibile caricare l'istanza")
             return False
-        ont.showInstanceInfo(gl.ONTPATH,instance)
+        ont.showInstanceInfo(ontpath,instance)
 
         print("\nVuoi aggiungere ulteriori informazioni a riguardo di questo Malware sulla base di conoscenza ? \n")
         choice = gr.numericInput(1,2,"\n[1]Si\n[2]No\n")
         gr.printSeparator()
         if choice == 1:
-            ont.uploadInfo(instance,gl.ONTPATH)
+            ont.uploadInfo(instance,ontpath)
         elif choice ==2:
             print("Ritorno al menu' principale")                    
             return True
@@ -62,7 +64,7 @@ def scanMetaData(query_set,model):
                 maltype =ifel.questionTree()
                 
                 
-                if  ont.uploadInstance(maltype,shaprog,gl.ONTPATH) == False:
+                if  ont.uploadInstance(maltype,shaprog,ontpath) == False:
                     print("Errore nel caricamento delle informazioni sulla base di conoscenza")
                     return False
                 
@@ -72,8 +74,8 @@ def scanMetaData(query_set,model):
                     choice = gr.numericInput(1,2,"\nvuoi fornire informazioni?\n[1] Si\n[2] No\n")
                     gr.printSeparator()
                     if choice == 1:
-                        malinstance = ont.loadIndByLabel(gl.ONTPATH,shaprog)
-                        if ont.uploadInfo(malinstance,gl.ONTPATH) == False:
+                        malinstance = ont.loadIndByLabel(ontpath,shaprog)
+                        if ont.uploadInfo(malinstance,ontpath) == False:
                             print("Errore nel caricamento delle ulteriori informazioni")
                             return False
                     elif choice ==2:

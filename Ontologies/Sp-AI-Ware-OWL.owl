@@ -876,6 +876,7 @@
 
     <owl:Class rdf:about="http://localhost/Sp-AI-Ware#Utente">
         <rdfs:subClassOf rdf:resource="http://localhost/Sp-AI-Ware#Private"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utente</rdfs:label>
     </owl:Class>
     
 
